@@ -16,8 +16,8 @@ eventvalidationValue = soup.findAll('input', type='hidden', id=EVENTVALIDATION)[
 data = {
     '__VIEWSTATE': viewstateValue,
     '__EVENTVALIDATION': eventvalidationValue,
-    'Login1$UserName': '',
-    'Login1$Password': '',
+    'Login1$UserName': 'D208735',
+    'Login1$Password': '4Y^gZ.=',
     'Login1$LoginButton': 'Anmelden',
 }
 
