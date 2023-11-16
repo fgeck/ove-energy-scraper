@@ -21,16 +21,6 @@ query_params = {
     '__EVENTVALIDATION': eventvalidationValue
 }
 
-form_data = {
-    'Login1$UserName': '',
-    'Login1$Password': '',
-    'Login1$LoginButton': 'Anmelden'
-}
-
-cookies = {
-    'ASP.NET_SessionId': '4fluvfnz3pl5di4h0xamejgr',
-}
-
 headers = {
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
     'Accept-Language': 'en-GB,en;q=0.9',
@@ -67,14 +57,10 @@ data = {
 response = session.post(
     'https://sem01.dvs.net/SEM.Portal.OVE/Login.aspx',
     params=query_params,
-    cookies=getLoginPageResponse.cookies,
     headers=headers,
     data=data,
     allow_redirects=True
 )
-
-# Prints the HTTP response code
-print(response.status_code)
 
 with open('result.html', 'w') as f:
     f.write(response.text)
@@ -119,6 +105,5 @@ print(
     ------------
     Last month: {waterLastMonth} m³
     This month: {waterThisMonth} m³
-
     """
 )
