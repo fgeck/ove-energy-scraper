@@ -22,7 +22,7 @@ data = {
 }
 
 response = session.post(
-    'https://sem01.dvs.net/SEM.Portal.OVE/Login.aspx',
+    url='https://sem01.dvs.net/SEM.Portal.OVE/Login.aspx',
     data=data,
     allow_redirects=True
 )
@@ -36,14 +36,14 @@ def getConsumptionFromText(text: str) -> float:
 
 
 # electricity
-electricityLastMonth = getConsumptionFromText(allGaugeDivs[0].text)
-electricityThisMonth = getConsumptionFromText(allGaugeDivs[1].text)
+electricityLastMonth = getConsumptionFromText(allGaugeDivs[0].contents[2])
+electricityThisMonth = getConsumptionFromText(allGaugeDivs[1].contents[2])
 # heat
-heatLastMonth = getConsumptionFromText(allGaugeDivs[2].text)
-heatThisMonth = getConsumptionFromText(allGaugeDivs[3].text)
+heatLastMonth = getConsumptionFromText(allGaugeDivs[2].contents[2])
+heatThisMonth = getConsumptionFromText(allGaugeDivs[3].contents[2])
 # water
-waterLastMonth = getConsumptionFromText(allGaugeDivs[4].text)
-waterThisMonth = getConsumptionFromText(allGaugeDivs[5].text)
+waterLastMonth = getConsumptionFromText(allGaugeDivs[4].contents[2])
+waterThisMonth = getConsumptionFromText(allGaugeDivs[5].contents[2])
 
 print(
     f"""
